@@ -61,10 +61,6 @@ html.dark .code-highlight pre {
   border: 1px solid #2e303e;
 }
 
-img {
-  width: 100px;
-}
-
 .line-number {
   color: var(--code-line-number);
 }
