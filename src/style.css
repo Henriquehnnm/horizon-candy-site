@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* Define as variáveis de cor para ambos os temas */
+:root {
+  --bg-color: #1c1e26;
+  --text-color: #c9c3d6;
+  --header-text: #c9c3d6;
+  --strong-text: #ffc887;
+  --button-bg: #2e303e;
+  --button-text: #c9c3d6;
+  --button-hover-bg: #4f525f;
+  --code-bg: #1c1e26;
+  --code-line-number: #c9c3d6a0;
+  --code-default: #c9c3d6;
+  --code-keyword: #c6a7ff;
+  --code-function: #7cffcd;
+  --code-string: #9aebee;
+  --code-operator: #bbbbbb;
+  --code-number: #ffc887;
+  --code-comment: #a3a0b3b3;
+}
+
+html.light {
+  --bg-color: #fdf0ed;
+  --text-color: #06060c;
+  --header-text: #06060c;
+  --strong-text: #f77d26;
+  --button-bg: #f9cbbe;
+  --button-text: #06060c;
+  --button-hover-bg: #f9cec3;
+  --code-bg: #fdf0ed;
+  --code-line-number: #06060c60;
+  --code-default: #06060c;
+  --code-keyword: #8a31b9;
+  --code-function: #da103f;
+  --code-string: #059e66;
+  --code-operator: #06060c;
+  --code-number: #f77d26;
+  --code-comment: #33333380;
+}
+
+/* Aplica as variáveis aos elementos */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover#github {
+  color: var(--code-function);
+  text-decoration: underline;
+}
+
+.code-highlight pre {
+  background-color: var(--code-bg);
+  border: 1px solid #f9cbbe;
+  border-radius: 1rem; /* ou 16px */
+}
+
+html.dark .code-highlight pre {
+  border: 1px solid #2e303e;
+}
+
+.line-number {
+  color: var(--code-line-number);
+}
+.token.default {
+  color: var(--code-default);
+}
+.token.keyword {
+  color: var(--code-keyword);
+  font-weight: bold;
+}
+.token.function {
+  color: var(--code-function);
+}
+.token.string {
+  color: var(--code-string);
+}
+.token.operator {
+  color: var(--code-operator);
+}
+.token.number {
+  color: var(--code-number);
+}
+.token.comment {
+  color: var(--code-comment);
+  font-style: italic;
+}

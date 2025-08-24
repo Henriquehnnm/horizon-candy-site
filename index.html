@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizon Candy - VS Code Theme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+  </head>
+
+  <body class="antialiased">
+    <!-- Header -->
+    <header class="py-6 px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold" style="color: var(--header-text)">
+          Horizon Candy
+        </h1>
+        <button
+          id="theme-toggle"
+          class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+          style="
+            color: var(--header-text);
+            --tw-ring-offset-color: var(--bg-color);
+          "
+        >
+          <!-- Moon Icon (Dark Mode) -->
+          <svg
+            id="theme-icon-dark"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            ></path>
+          </svg>
+          <!-- Sun Icon (Light Mode) -->
+          <svg
+            id="theme-icon-light"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2
+          class="text-5xl md:text-7xl font-black tracking-tighter"
+          style="color: var(--header-text)"
+        >
+          A sweet and vibrant theme for your code.
+        </h2>
+        <p
+          class="mt-6 text-lg md:text-xl max-w-2xl mx-auto"
+          style="color: var(--text-color)"
+        >
+          <strong>Horizon Candy</strong> was created to be easy on the eyes,
+          with carefully selected colors that help maintain focus and
+          productivity, whether in the dark with the
+          <strong style="color: var(--code-function)">Candy</strong> version or
+          in daylight with the
+          <strong style="color: var(--strong-text)">Milk</strong> version.
+        </p>
+        <div class="mt-10 flex justify-center gap-4">
+          <a
+            href="https://marketplace.visualstudio.com/items?itemName=Henriquehnnm.horizon-candy"
+            class="px-8 py-3 rounded-full text-lg font-semibold transition-transform transform hover:scale-105"
+            style="
+              background-color: var(--button-bg);
+              color: var(--button-text);
+            "
+            target="_blank"
+          >
+            Install on VS Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Code Showcase -->
+      <div class="mt-20 max-w-4xl mx-auto code-highlight">
+        <div class="shadow-2xl rounded-2xl overflow-hidden">
+          <pre
+            class="p-6 text-left text-sm md:text-base leading-relaxed"
+          ><code class="language-c" style="font-family: 'Fira Code', 'Courier New', monospace;">
+<span class="line-number"> 1 </span>  <span class="token keyword">#include</span> <span class="token string">&lt;stdio.h&gt;</span>
+<span class="line-number"> 2 </span>
+<span class="line-number"> 3 </span>  <span class="token keyword">int</span> <span class="token function">main</span><span class="token operator">() {</span>
+<span class="line-number"> 4 </span>      <span class="token keyword">double</span> a<span class="token operator">,</span> b<span class="token operator">;</span>
+<span class="line-number"> 5 </span>      <span class="token keyword">char</span> op<span class="token operator">;</span>
+<span class="line-number"> 6 </span>
+<span class="line-number"> 7 </span>      <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Enter the first number: "</span><span class="token operator">);</span>
+<span class="line-number"> 8 </span>      <span class="token function">scanf</span><span class="token operator">(</span><span class="token string">"%lf"</span><span class="token operator">,</span> <span class="token operator">&amp;</span>a<span class="token operator">);</span>
+<span class="line-number"> 9 </span>
+<span class="line-number">10 </span>      <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Enter the operator (+ - * /): "</span><span class="token operator">);</span>
+<span class="line-number">11 </span>      <span class="token function">scanf</span><span class="token operator">(</span><span class="token string">" %c"</span><span class="token operator">,</span> <span class="token operator">&amp;</span>op<span class="token operator">);</span>
+<span class="line-number">12 </span>
+<span class="line-number">13 </span>      <span class="token keyword">switch</span><span class="token operator">(</span>op<span class="token operator">) {</span>
+<span class="line-number">14 </span>          <span class="token keyword">case</span> <span class="token string">'+'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">+</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
+<span class="line-number">15 </span>          <span class="token keyword">case</span> <span class="token string">'-'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">-</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
+<span class="line-number">16 </span>          <span class="token keyword">case</span> <span class="token string">'*'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">*</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
+<span class="line-number">17 </span>          <span class="token keyword">case</span> <span class="token string">'/'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">/</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
+<span class="line-number">18 </span>          <span class="token keyword">default</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Invalid operator!\n"</span><span class="token operator">);</span>
+<span class="line-number">19 </span>      <span class="token operator">}</span>
+<span class="line-number">20 </span>
+<span class="line-number">21 </span>      <span class="token keyword">return</span> <span class="token number">0</span><span class="token operator">;</span>
+<span class="line-number">22 </span>  <span class="token operator">}</span>
+</code></pre>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 mt-16" style="color: var(--code-comment)">
+      <p>
+        &copy; 2025 Horizon Candy. By
+        <a id="github" href="https://github.com/Henriquehnnm/">Henrique</a>.
+      </p>
+    </footer>
+    <script src="src/main.js"></script>
+  </body>
+</html>
