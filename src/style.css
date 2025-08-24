@@ -13,7 +13,7 @@
   --code-default: #c9c3d6;
   --code-keyword: #c6a7ff;
   --code-function: #7cffcd;
-  --code-string: #87CEFA;
+  --code-string: #87cefa;
   --code-operator: #bbbbbb;
   --code-number: #ffc887;
   --code-comment: #a3a0b3b3;
@@ -49,6 +49,10 @@ body {
 a:hover#github {
   color: var(--code-function);
   text-decoration: underline;
+}
+
+.title:hover {
+  color: var(--code-function);
 }
 
 .code-highlight pre {
