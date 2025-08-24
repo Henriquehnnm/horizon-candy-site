@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizon Candy - Ports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+    <style>
+      /* As cores e estilos são puxados do 'src/style.css' e do Javascript. */
+      /* O Tailwind CSS já está carregado, então a maioria dos estilos está na marcação. */
+
+      .card {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+      .card-link {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <!-- Cabeçalho (Header) - Mantido igual ao arquivo original -->
+    <header class="py-6 px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold" style="color: var(--header-text)">
+          Horizon Candy
+        </h1>
+        <button
+          id="theme-toggle"
+          class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+          style="
+            color: var(--header-text);
+            --tw-ring-offset-color: var(--bg-color);
+          "
+        >
+          <!-- Ícone da Lua (Modo Escuro) -->
+          <svg
+            id="theme-icon-dark"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            ></path>
+          </svg>
+          <!-- Ícone do Sol (Modo Claro) -->
+          <svg
+            id="theme-icon-light"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <div class="max-w-5xl mx-auto">
+        <h2
+          class="text-4xl md:text-6xl font-black tracking-tighter"
+          style="color: var(--header-text)"
+        >
+          Ports e Variações
+        </h2>
+        <p
+          class="mt-4 text-lg md:text-xl max-w-3xl mx-auto"
+          style="color: var(--text-color)"
+        >
+          Descubra o tema Horizon Candy em diferentes plataformas e aplicativos.
+        </p>
+
+        <!-- Grade de Cartões para os Ports -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Cartão: VS Code -->
+          <div
+            class="card p-6 rounded-2xl transition-transform transform hover:scale-105"
+          >
+            <img
+              src="assets/icons/vscode.svg"
+              alt="Ícone do VS Code"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-2xl font-bold" style="color: var(--code-function)">
+              Visual Studio Code
+            </h3>
+            <p class="mt-2 text-sm" style="color: var(--text-secondary)">
+              O tema original, disponível nas versões Candy (dark) e Milk
+              (light).
+            </p>
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=Henriquehnnm.horizon-candy"
+              class="card-link mt-4 inline-block px-6 py-2 rounded-full font-semibold"
+              target="_blank"
+            >
+              Ver na Marketplace
+            </a>
+          </div>
+
+          <!-- Cartão: GitKraken -->
+          <div
+            class="card p-6 rounded-2xl transition-transform transform hover:scale-105"
+          >
+            <img
+              src="assets/icons/gitkraken.svg"
+              alt="Ícone do GitKraken"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-2xl font-bold" style="color: var(--code-function)">
+              GitKraken
+            </h3>
+            <p class="mt-2 text-sm" style="color: var(--text-secondary)">
+              Versões do tema adaptadas para o cliente Git mais popular.
+            </p>
+            <a
+              href="https://github.com/Henriquehnnm/horizon-candy-gitkraken"
+              class="card-link mt-4 inline-block px-6 py-2 rounded-full font-semibold"
+            >
+              Ver no GitHub
+            </a>
+          </div>
+
+          <!-- Cartão: XFCE Terminal -->
+          <div
+            class="card p-6 rounded-2xl transition-transform transform hover:scale-105"
+          >
+            <img
+              src="assets/icons/terminal.svg"
+              alt="Ícone Terminal"
+              class="mx-auto mb-4"
+            />
+            <h3 class="text-2xl font-bold" style="color: var(--code-function)">
+              XFCE4 Terminal
+            </h3>
+            <p class="mt-2 text-sm" style="color: var(--text-secondary)">
+              O Horizon Candy no XFCE4 Terminal
+            </p>
+            <a
+              href="https://github.com/Henriquehnnm/horizon-candy-xfce-terminal"
+              class="card-link mt-4 inline-block px-6 py-2 rounded-full font-semibold"
+            >
+              Ver no GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Rodapé (Footer) - Mantido igual ao arquivo original -->
+    <footer class="text-center py-8 mt-16" style="color: var(--code-comment)">
+      <p>
+        &copy; 2025 Horizon Candy. By
+        <a id="github" href="https://github.com/Henriquehnnm/">Henrique</a>.
+      </p>
+    </footer>
+    <script src="src/main.js"></script>
+  </body>
+</html>
