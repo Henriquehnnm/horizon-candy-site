@@ -91,3 +91,32 @@ html.dark .code-highlight pre {
   color: var(--code-comment);
   font-style: italic;
 }
+
+.color-box {
+  background-color: var(--code-bg);
+  border: 1px solid var(--button-bg);
+  border-radius: 1rem; /* ou 16px */
+}
+
+.color-box > div:hover {
+  transform: scale(1.1);
+}
+
+.c1 {
+  background-color: var(--code-function);
+}
+.c2 {
+  background-color: var(--code-keyword);
+}
+.c3 {
+  background-color: var(--code-number);
+}
+.c4 {
+  background-color: var(--code-string);
+}
+.c5 {
+  background-color: var(--text-color);
+}
+.c6 {
+  background-color: var(--bg-color);
+}
