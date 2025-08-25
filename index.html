@@ -103,29 +103,33 @@
         <div class="shadow-2xl rounded-2xl overflow-hidden">
           <pre
             class="p-6 text-left text-sm md:text-base leading-relaxed"
-          ><code class="language-c" style="font-family: 'Fira Code', 'Courier New', monospace;">
-<span class="line-number"> 1 </span>  <span class="token keyword">#include</span> <span class="token string">&lt;stdio.h&gt;</span>
-<span class="line-number"> 2 </span>
-<span class="line-number"> 3 </span>  <span class="token keyword">int</span> <span class="token function">main</span><span class="token operator">() {</span>
-<span class="line-number"> 4 </span>      <span class="token keyword">double</span> a<span class="token operator">,</span> b<span class="token operator">;</span>
-<span class="line-number"> 5 </span>      <span class="token keyword">char</span> op<span class="token operator">;</span>
-<span class="line-number"> 6 </span>
-<span class="line-number"> 7 </span>      <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Enter the first number: "</span><span class="token operator">);</span>
-<span class="line-number"> 8 </span>      <span class="token function">scanf</span><span class="token operator">(</span><span class="token string">"%lf"</span><span class="token operator">,</span> <span class="token operator">&amp;</span>a<span class="token operator">);</span>
-<span class="line-number"> 9 </span>
-<span class="line-number">10 </span>      <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Enter the operator (+ - * /): "</span><span class="token operator">);</span>
-<span class="line-number">11 </span>      <span class="token function">scanf</span><span class="token operator">(</span><span class="token string">" %c"</span><span class="token operator">,</span> <span class="token operator">&amp;</span>op<span class="token operator">);</span>
+          ><code class="language-js" style="font-family: 'Fira Code', 'Courier New', monospace;">
+<span class="line-number"> 1 </span><span class="token keyword">const</span> <span class="token function">asyncOperation</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token operator">(</span><span class="token parameter">data</span><span class="token operator">)</span> <span class="token operator">=></span> <span class="token operator">{</span>
+<span class="line-number"> 2 </span>  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token operator">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="line-number"> 3 </span>    <span class="token function">setTimeout</span><span class="token operator">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="line-number"> 4 </span>      <span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="line-number"> 5 </span>        <span class="token function">resolve</span><span class="token operator">(</span><span class="token string">`Success with value: ${data}`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-number"> 6 </span>      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+<span class="line-number"> 7 </span>        <span class="token function">reject</span><span class="token operator">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Invalid data provided'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-number"> 8 </span>      <span class="token punctuation">}</span>
+<span class="line-number"> 9 </span>    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-number">10 </span>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-number">11 </span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="line-number">12 </span>
-<span class="line-number">13 </span>      <span class="token keyword">switch</span><span class="token operator">(</span>op<span class="token operator">) {</span>
-<span class="line-number">14 </span>          <span class="token keyword">case</span> <span class="token string">'+'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">+</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
-<span class="line-number">15 </span>          <span class="token keyword">case</span> <span class="token string">'-'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">-</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
-<span class="line-number">16 </span>          <span class="token keyword">case</span> <span class="token string">'*'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">*</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
-<span class="line-number">17 </span>          <span class="token keyword">case</span> <span class="token string">'/'</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Result: %.2f\n"</span><span class="token operator">,</span> a <span class="token operator">/</span> b<span class="token operator">);</span> <span class="token keyword">break</span><span class="token operator">;</span>
-<span class="line-number">18 </span>          <span class="token keyword">default</span><span class="token operator">:</span> <span class="token function">printf</span><span class="token operator">(</span><span class="token string">"Invalid operator!\n"</span><span class="token operator">);</span>
-<span class="line-number">19 </span>      <span class="token operator">}</span>
-<span class="line-number">20 </span>
-<span class="line-number">21 </span>      <span class="token keyword">return</span> <span class="token number">0</span><span class="token operator">;</span>
-<span class="line-number">22 </span>  <span class="token operator">}</span>
+<span class="line-number">13 </span><span class="token keyword">const</span> <span class="token function">executeWorkflow</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="line-number">14 </span>  <span class="token comment">// Performs a series of asynchronous operations in sequence.</span>
+<span class="line-number">15 </span>  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+<span class="line-number">16 </span>    <span class="token keyword">const</span> result1 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">asyncOperation</span><span class="token operator">(</span><span class="token number">5</span><span class="token operator">)</span><span class="token punctuation">;</span>
+<span class="line-number">17 </span>    <span class="token function">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token operator">(</span>result1<span class="token operator">)</span><span class="token punctuation">;</span>
+<span class="line-number">18 </span>
+<span class="line-number">19 </span>    <span class="token keyword">const</span> result2 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">asyncOperation</span><span class="token operator">(</span><span class="token number">10</span><span class="token operator">)</span><span class="token punctuation">;</span>
+<span class="line-number">20 </span>    <span class="token function">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token operator">(</span>result2<span class="token operator">)</span><span class="token punctuation">;</span>
+<span class="line-number">21 </span>  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="line-number">22 </span>    <span class="token function">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'An error occurred:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-number">23 </span>  <span class="token punctuation">}</span>
+<span class="line-number">24 </span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="line-number">25 </span>
+<span class="line-number">26 </span><span class="token function">executeWorkflow</span><span class="token operator">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
         </div>
       </div>
