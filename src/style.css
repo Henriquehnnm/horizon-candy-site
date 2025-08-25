@@ -108,10 +108,10 @@ html.dark .code-highlight pre {
 .c2 {
   background-color: var(--code-keyword);
 }
-.c3 {
+.c4 {
   background-color: var(--code-number);
 }
-.c4 {
+.c3 {
   background-color: var(--code-string);
 }
 .c5 {
